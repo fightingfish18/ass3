@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+William Smyth May
+2013-11-07
+This is the Dawg Pizza 3.0 Menu page
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="wsmay1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="img/logo.png">
+    <title>Dawg Pizza - Menu</title>
+    
+	<!-- hot link to Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	
+	<!-- Override Style Sheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+	<!-- direct link to menu script -->
+	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!-- my own JavaScript file, which will use the menu data structure -->
+	<script src="js/menuProc.js"></script>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<a href="index.html"><img src="img/logo.png" alt="pizzaLogo" id="logo"></a>
+			<nav class="navbar navbar-default topNav" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="https://twitter.com/Dawg_Pizza" class="twitter-follow-button" data-show-count="false">Follow @Dawg_Pizza</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-md-6 one">
+				<h1>Meat Pizzas</h1>
+			</div>
+			<div class="col-md-6 two">
+				<h1>Vegetarian</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 three">
+				<h1>Drinks - $4 Each</h1>
+			</div>
+			<div class="col-md-6 four">
+				<h1>Desserts</h1>
+			</div>
+		</div>
+		
+		<!-- Templates for the menu sections.  These are always invisible. -->
+		<div class="pizza template">
+			<h2 class="name"></h2>
+			<p class="description"></p>
+			<p class="prices"></p>
+		</div>
+		
+		<div class="drink template">
+			<h2 class="name"></h2>
+		</div>
+		
+		<div class="dessert template">
+			<h2 class="name1"></h2>
+		</div>
+		<!-- /templates -->
+		
+				
+		<div class="navbar navbar-default navbar-fixed-bottom center">
+			<p>&copy; Dawg Pizza 2013, Call us for delivery: 206-555-1212</p>
+		</div>
+	</div>
+	<!-- hot links to Bootstrap JavaScript (required by Bootstrap) -->
+   
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
