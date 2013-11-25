@@ -1,0 +1,155 @@
+<!doctype html>
+<!--
+William Smyth May
+2013-11-07
+This is the Dawg Pizza 3.0 Menu page
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="wsmay1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="img/logo.png">
+    <title>Dawg Pizza - Order</title>
+    
+	<!-- hot link to Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	
+	<!-- Override Style Sheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+	<!-- direct link to menu script -->
+	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	
+	<!-- my own JavaScript file to display the order item -->
+	<script src="js/orderDisp.js"></script>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<a href="index.html"><img src="img/logo.png" alt="pizzaLogo" id="logo"></a>
+			<nav class="navbar navbar-default topNav" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="order.html">Order</a></li>
+						<li><a href="https://twitter.com/Dawg_Pizza" class="twitter-follow-button" data-show-count="false">Follow @Dawg_Pizza</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		
+		<div class="text center">
+			<p>Delivery is confined to Seattle city limits.</p>
+			<p>Delivery hours are from 12:00PM - 11:00PM</p>
+			<p>We accept cash or credit for delivery, but require that the order purchase be $20 or greater.</p>
+			<form class="customer-information">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" placeholder="name">
+				</div>
+				<div class="form-group">
+					<label for="address">Street Address</label>
+					<input type="text" id="address" name="address" placeholder="street">
+				</div>
+				<div class="form-group">
+					<label for="zip">Zip Code</label>
+					<input type="text" id="zip" name="zip" placeholder="zip code">
+				</div>
+				<div class="form-group">
+					<label for="tele">Phone</label>
+					<input type="tel" id="tele" name="tele" placeholder="phone number">
+				</div>
+			</form>
+		</div>
+		
+		<div class="orderSpace">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="pizzas">
+						<h1>Pizzas</h1>
+					</div>
+					<div class="drinks">
+						<h1>Drinks</h1>
+					</div>
+					<div class="desserts">
+						<h1>Desserts</h1>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="cart">
+						<h2 class="center">Your Cart</h2>
+						<div class="cart-container">
+						</div>
+						<div class="price">
+							<p class="sub">Sub Total: 0</p>
+							<p class="tax">Order Tax: 0</p>
+							<p class="grand">Grand Total: 0</p>
+						</div>
+						<div class="cart-buttons">
+							<button class="btn btn-default clear-all" type="button">Clear All</button>
+							<button class="btn btn-default place-order" type="button">Place Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navbar navbar-default navbar-fixed-bottom center">
+			<p>&copy; Dawg Pizza 2013, Call us for delivery: 206-555-1212</p>
+		</div>
+	</div>
+	
+	<!-- form that submits the final order -->
+	<form class="order" method="POST" action="http://dawgpizza.com/orders/">
+		<input class="final-order" name="cart" type="hidden">
+	</form>
+	
+	<!-- Templates for the menu sections.  These are always invisible. -->
+	<div class="templates">
+		<div class="pizza template">
+			<h3 class="name"></h3>
+			<p class="description"></p>
+			<p class="prices"></p>
+			<button class="btn btn-default add-to-cart small" type="button" data-type="pizza" data-name="" data-size="small" data-price="">Small</button>
+			<button class="btn btn-defualt add-to-cart medium" type="button" data-type="pizza" data-name="" data-size="medium" data-price="">Medium</button>
+			<button class="btn btn-default add-to-cart large" type="button" data-type="pizza" data-name="" data-size="large" data-price="">Large</button>
+		</div>
+		
+		<div class="drink template">
+			<h3 class="name"></h3>
+			<button class="btn btn-default add-to-cart" type="button" data-type="drink" data-name="" data-size="m" data-price="">Add to Cart</button>
+		</div>
+		
+		<div class="dessert template">
+			<h3 class="name1"></h3>
+			<button class="btn btn-default add-to-cart" type="button" data-type="dessert" data-name="" data-size="m" data-price="">Add to Cart</button>
+		</div>
+		
+		<div class="cart-item template">
+			<p class="name"></p>
+			<button class="btn btn-default remove-from-cart" type="button">Remove from order</button>
+		</div>
+	</div>
+	<!-- /templates -->
+	
+	<!-- JavaScript file to render the cart and place the order -->
+	<script src="js/order.js"></script>
+	</body>
+</html>

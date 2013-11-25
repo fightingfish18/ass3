@@ -1,7 +1,7 @@
 /*
 William Smyth May
-2013-10-24
-This is the CSS style sheet for assignment 2.
+2013-11-25
+This is the CSS style sheet for assignment 4.
 These are overrides for the bootstrap framework
 */
 .center {
@@ -110,4 +110,16 @@ body {
 
 .template {
 	display: none;
+}
+
+.cart-container {
+	padding-bottom: 100px;
+}
+
+.cart-item p, .cart-buttons {
+	display: inline-block;
+}
+
+.orderSpace {
+	padding-bottom: 3%;
 }
